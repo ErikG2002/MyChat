@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">MyChat</string>
+    <string name="register">Registro</string>
+    <string name="login">Iniciar Sesión</string>
+    <string name="questionRegister">¿Ya tienes cuenta?</string>
+    <string name="questionLogin">¿No tienes cuenta?</string>
+    <string name="user">Usuario</string>
+    <string name="email">Correo</string>
+    <string name="password">Contraseña</string>
+    <string name="acceptRules">Acepto terminos y condiciones</string>
+    <string name="questionPassword">¿Olvidaste tu contraseña?</string>
+    <string name="continueText">Cotinuar</string>
+</resources>

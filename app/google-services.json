@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "716443025167",
+    "firebase_url": "https://basedatosjthink.firebaseio.com",
+    "project_id": "basedatosjthink",
+    "storage_bucket": "basedatosjthink.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:716443025167:android:0f7cdcae4e23fb9a61087a",
+        "android_client_info": {
+          "package_name": "com.example.mychat"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "716443025167-u1pm9kdacanj6c8mo31cjioealculfs1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDDpLoZRoJkSdrlmPZE-6HIxR0QSlG1lDE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "716443025167-u1pm9kdacanj6c8mo31cjioealculfs1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
