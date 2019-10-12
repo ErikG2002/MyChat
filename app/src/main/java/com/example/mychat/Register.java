@@ -27,6 +27,7 @@ import java.util.Map;
 public class Register extends AppCompatActivity implements View.OnClickListener {
 
     //defining view objects
+    private TextView goToLogin;
     private EditText TextEmail, TextPassword;
     private Button btnRegistrar;
     private ProgressDialog progressDialog;
@@ -59,9 +60,19 @@ public class Register extends AppCompatActivity implements View.OnClickListener 
         progressDialog = new ProgressDialog(this);
 
         toLogin = new Intent(this, Login.class);
+        goToLogin = findViewById(R.id.goToLogin);
 
         //attaching listener to button
         btnRegistrar.setOnClickListener(this);
+
+        //question for account
+        goToLogin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(toLogin);
+                finish();
+            }
+        });
     }
 
     private void registrarUsuario() {
@@ -121,5 +132,4 @@ public class Register extends AppCompatActivity implements View.OnClickListener 
         //Get method
         registrarUsuario();
     }
-
 }

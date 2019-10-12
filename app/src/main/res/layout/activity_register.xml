@@ -117,7 +117,7 @@
                     android:textColor="@color/colorWhite" />
 
                 <TextView
-                    android:id="@+id/goToLoging"
+                    android:id="@+id/goToLogin"
                     android:layout_marginTop="15dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
