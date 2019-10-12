@@ -3,9 +3,7 @@ package com.example.mychat;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.app.Activity;
 import android.app.ProgressDialog;
-import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
@@ -24,7 +22,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import java.util.HashMap;
 import java.util.Map;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+public class Register extends AppCompatActivity implements View.OnClickListener {
 
     //defining view objects
     private TextView goLogin;
@@ -42,7 +40,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_register);
 
         //inicializamos el objeto firebaseAuth
         firebaseAuth = FirebaseAuth.getInstance();
@@ -94,10 +92,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                             users.put("Correo", email);
                             usersRef.updateChildren(users);
 
-                            Toast.makeText(MainActivity.this, "Se ha registrado el usuario con el email: " + TextEmail.getText(), Toast.LENGTH_LONG).show();
+                            Toast.makeText(Register.this, "Se ha registrado el usuario con el email: " + TextEmail.getText(), Toast.LENGTH_LONG).show();
                         } else {
 
-                            Toast.makeText(MainActivity.this, "No se pudo registrar el usuario ", Toast.LENGTH_LONG).show();
+                            Toast.makeText(Register.this, "No se pudo registrar el usuario ", Toast.LENGTH_LONG).show();
                         }
                         progressDialog.dismiss();
                     }
