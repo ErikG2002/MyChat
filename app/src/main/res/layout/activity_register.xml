@@ -85,6 +85,7 @@
                 android:orientation="horizontal"
                 android:layout_gravity="center">
                 <CheckBox
+                    android:id="@+id/acceptConditions"
                     android:layout_width="30dp"
                     android:layout_height="30dp"/>
 

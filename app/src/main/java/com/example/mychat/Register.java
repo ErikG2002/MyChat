@@ -4,10 +4,12 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -25,16 +27,16 @@ import java.util.Map;
 public class Register extends AppCompatActivity implements View.OnClickListener {
 
     //defining view objects
-    private TextView goLogin;
-    private EditText TextEmail;
-    private EditText TextPassword;
+    private EditText TextEmail, TextPassword;
     private Button btnRegistrar;
     private ProgressDialog progressDialog;
-    final FirebaseDatabase database = FirebaseDatabase.getInstance();
-    DatabaseReference ref = database.getReference("server/saving-data/fireblog");
-    String email,password,user;
+    private final FirebaseDatabase database = FirebaseDatabase.getInstance();
+    private DatabaseReference ref = database.getReference("server/saving-data/fireblog");
+    private String email,password,user;
+    private CheckBox acceptConditions;
+    private Intent toLogin;
 
-    //Declaramos un objeto firebaseAuth
+    //Create object firebase auth
     private FirebaseAuth firebaseAuth;
 
     @Override
@@ -42,17 +44,21 @@ public class Register extends AppCompatActivity implements View.OnClickListener 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
 
-        //inicializamos el objeto firebaseAuth
+        //Init Firebase Auth
         firebaseAuth = FirebaseAuth.getInstance();
        // user = FirebaseDatabase.getInstance().getReference();
 
-        //Referenciamos los views
-        TextEmail = (EditText) findViewById(R.id.emailInput);
-        TextPassword = (EditText) findViewById(R.id.passInput);
+        //Initialize views
+        TextEmail = findViewById(R.id.emailInput);
+        TextPassword = findViewById(R.id.passInput);
 
-        btnRegistrar = (Button) findViewById(R.id.sendButton);
+        acceptConditions = findViewById(R.id.acceptConditions);
+
+        btnRegistrar = findViewById(R.id.sendButton);
 
         progressDialog = new ProgressDialog(this);
+
+        toLogin = new Intent(this, Login.class);
 
         //attaching listener to button
         btnRegistrar.setOnClickListener(this);
@@ -60,18 +66,23 @@ public class Register extends AppCompatActivity implements View.OnClickListener 
 
     private void registrarUsuario() {
 
-        //Obtenemos el email y la contraseña desde las cajas de texto
+        //Get values of inputs email and password
         email = TextEmail.getText().toString().trim();
         password = TextPassword.getText().toString().trim();
 
-        //Verificamos que las cajas de texto no esten vacías
+        //Verefy that the ipnuts aren't empty
         if (TextUtils.isEmpty(email)) {
-            Toast.makeText(this, "Se debe ingresar un email", Toast.LENGTH_LONG).show();
+            Toast.makeText(this, "Se debe ingresar un email", Toast.LENGTH_SHORT).show();
             return;
         }
 
         if (TextUtils.isEmpty(password)) {
-            Toast.makeText(this, "Falta ingresar la contraseña", Toast.LENGTH_LONG).show();
+            Toast.makeText(this, "Falta ingresar la contraseña", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+        if (!acceptConditions.isChecked()) {
+            Toast.makeText(this, "Acepta los términos y condiciones", Toast.LENGTH_SHORT).show();
             return;
         }
 
@@ -93,6 +104,8 @@ public class Register extends AppCompatActivity implements View.OnClickListener 
                             usersRef.updateChildren(users);
 
                             Toast.makeText(Register.this, "Se ha registrado el usuario con el email: " + TextEmail.getText(), Toast.LENGTH_LONG).show();
+                            startActivity(toLogin);
+                            finish();
                         } else {
 
                             Toast.makeText(Register.this, "No se pudo registrar el usuario ", Toast.LENGTH_LONG).show();
@@ -105,7 +118,7 @@ public class Register extends AppCompatActivity implements View.OnClickListener 
 
     @Override
     public void onClick(View view) {
-        //Invocamos al método:
+        //Get method
         registrarUsuario();
     }
 
