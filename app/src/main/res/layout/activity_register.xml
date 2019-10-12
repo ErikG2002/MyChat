@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     xmlns:tools="http://schemas.android.com/tools"
     tools:context=".Register"
+    android:theme="@style/InputsColors"
     android:background="@color/colorWhite">
 
     <ScrollView
@@ -51,7 +52,6 @@
                     android:layout_marginRight="25dp"
                     android:textColor="@color/colorBlack"
                     android:hint="@string/user"
-                    android:backgroundTint="@color/colorPrimary"
                     android:textColorHint="@color/colorGray" />
 
                 <EditText
@@ -64,7 +64,6 @@
                     android:layout_marginBottom="10dp"
                     android:textColor="@color/colorBlack"
                     android:hint="@string/email"
-                    android:backgroundTint="@color/colorPrimary"
                     android:textColorHint="@color/colorGray"/>
 
                 <EditText
@@ -75,8 +74,8 @@
                     android:layout_marginRight="25dp"
                     android:textColor="@color/colorBlack"
                     android:hint="@string/password"
-                    android:backgroundTint="@color/colorPrimary"
-                    android:textColorHint="@color/colorGray"/>
+                    android:textColorHint="@color/colorGray"
+                    android:inputType="textPassword"/>
             </LinearLayout>
 
             <LinearLayout
@@ -86,8 +85,6 @@
                 android:orientation="horizontal"
                 android:layout_gravity="center">
                 <CheckBox
-                    android:backgroundTint="@color/colorPrimary"
-                    android:buttonTint="@color/colorPrimary"
                     android:layout_width="30dp"
                     android:layout_height="30dp"/>
 
