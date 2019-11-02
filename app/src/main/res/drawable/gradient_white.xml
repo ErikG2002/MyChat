@@ -7,7 +7,7 @@
         android:endColor="@color/colorWhite"
         android:startColor="@color/transparent" />
     <stroke
-        android:width="5px"
-        android:color="@color/transparent" />
+        android:width="0px"
+        android:color="@color/colorWhite" />
 
 </shape>

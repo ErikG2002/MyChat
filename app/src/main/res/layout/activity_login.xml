@@ -28,7 +28,7 @@
                 <TextView
                     android:background="@drawable/gradient_white"
                     android:layout_width="match_parent"
-                    android:layout_height="201dp" />
+                    android:layout_height="200dp" />
             </FrameLayout>
             <TextView
                 android:id="@+id/loginTitle"
