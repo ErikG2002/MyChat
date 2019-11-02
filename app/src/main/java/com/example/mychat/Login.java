@@ -45,6 +45,7 @@ public class Login extends AppCompatActivity {
             public void onClick(View v) {
                 inputPassword.setInputType( visible ? InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_PASSWORD : InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD);
                 inputPassword.setTypeface(Typeface.SANS_SERIF);
+                seePasswordLogin.setImageResource(visible ? R.drawable.eye : R.drawable.eyeblock);
                 visible = !visible;
             }
         });

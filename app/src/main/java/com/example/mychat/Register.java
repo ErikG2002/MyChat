@@ -5,12 +5,15 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.os.Bundle;
+import android.text.InputType;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -36,6 +39,8 @@ public class Register extends AppCompatActivity implements View.OnClickListener 
     private String email,password,user;
     private CheckBox acceptConditions;
     private Intent toLogin;
+    private ImageView seePasswordRegister;
+    private boolean visible;
 
     //Create object firebase auth
     private FirebaseAuth firebaseAuth;
@@ -61,6 +66,19 @@ public class Register extends AppCompatActivity implements View.OnClickListener 
 
         toLogin = new Intent(this, Login.class);
         goToLogin = findViewById(R.id.goToLogin);
+
+        visible = false;
+        seePasswordRegister = findViewById(R.id.seePasswordRegister);
+
+        seePasswordRegister.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                TextPassword.setInputType( visible ? InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_PASSWORD : InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD);
+                TextPassword.setTypeface(Typeface.SANS_SERIF);
+                seePasswordRegister.setImageResource(visible ? R.drawable.eye : R.drawable.eyeblock);
+                visible = !visible;
+            }
+        });
 
         //attaching listener to button
         btnRegistrar.setOnClickListener(this);

@@ -54,28 +54,38 @@
                     android:hint="@string/user"
                     android:textColorHint="@color/colorGray" />
 
-                <EditText
-                    android:id="@+id/emailInput"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginRight="25dp"
-                    android:layout_marginLeft="25dp"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginBottom="10dp"
-                    android:textColor="@color/colorBlack"
-                    android:hint="@string/email"
-                    android:textColorHint="@color/colorGray"/>
 
-                <EditText
-                    android:id="@+id/passInput"
+                    <EditText
+                        android:id="@+id/emailInput"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/colorBlack"
+                        android:hint="@string/email"
+                        android:textColorHint="@color/colorGray"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:layout_marginRight="25dp"
+                        android:layout_marginLeft="25dp"/>
+                <FrameLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="25dp"
-                    android:layout_marginRight="25dp"
-                    android:textColor="@color/colorBlack"
-                    android:hint="@string/password"
-                    android:textColorHint="@color/colorGray"
-                    android:inputType="textPassword"/>
+                    android:layout_marginRight="25dp">
+                    <EditText
+                        android:id="@+id/passInput"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/colorBlack"
+                        android:hint="@string/password"
+                        android:textColorHint="@color/colorGray"
+                        android:inputType="textPassword"/>
+                    <ImageView
+                        android:id="@+id/seePasswordRegister"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:src="@drawable/eye"
+                        android:layout_gravity="center|end"/>
+                </FrameLayout>
             </LinearLayout>
 
             <LinearLayout
