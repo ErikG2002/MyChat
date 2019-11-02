@@ -54,14 +54,22 @@
                     android:layout_height="wrap_content"
                     android:hint="@string/email"
                     android:textColorHint="@color/colorGray" />
-
-                <EditText
-                    android:inputType="textPassword"
+                <FrameLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="@string/password"
-                    android:textColorHint="@color/colorGray"
-                    android:layout_marginTop="20dp"/>
+                    android:layout_marginTop="20dp">
+                    <EditText
+                        android:inputType="textPassword"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/password"
+                        android:textColorHint="@color/colorGray" />
+                    <ImageView
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:src="@drawable/eye"
+                        android:layout_gravity="center|end"/>
+                </FrameLayout>
 
                 <TextView
                     android:layout_marginTop="10dp"
