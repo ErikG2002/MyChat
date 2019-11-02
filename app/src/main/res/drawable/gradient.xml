@@ -5,7 +5,7 @@
     <gradient
         android:angle="270"
         android:endColor="@color/colorWhite"
-        android:startColor="@color/transparent" />*/
+        android:startColor="@color/transparent" />
     <stroke
         android:width="5px"
         android:color="@color/transparent" />

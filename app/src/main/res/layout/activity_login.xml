@@ -4,103 +4,104 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorWhite"
-    tools:context=".Login">
-
-    <ImageButton
-        android:id="@+id/backgroundLogin"
-        android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:src="@drawable/testimage"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"/>
-
-    <TextView
-        android:background="@drawable/gradient"
-        android:layout_width="match_parent"
-        android:layout_height="210dp"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent" />
-
-    <TextView
-        android:id="@+id/loginTitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textColor="@color/colorBlack"
-        android:textSize="30sp"
-        android:text="@string/login"
-        android:layout_marginTop="10dp"
-        app:layout_constraintTop_toBottomOf="@id/backgroundLogin"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"/>
-
-    <LinearLayout
-        android:id="@+id/loginInputs"
+    tools:context=".Login"
+    android:theme="@style/InputsColors"
+    android:background="@color/colorWhite">
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_marginTop="20dp"
-        android:layout_marginLeft="25dp"
-        android:layout_marginRight="25dp"
-        app:layout_constraintTop_toBottomOf="@id/loginTitle"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent">
-
-        <EditText
+        app:layout_constraintTop_toTopOf="parent">
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/email"
-            android:textColorHint="@color/colorGray" />
+            android:orientation="vertical">
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <ImageView
+                    android:id="@+id/backgroundLogin"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:src="@drawable/backlogin"
+                    android:scaleType="centerCrop"/>
 
-        <EditText
-            android:inputType="textPassword"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="@string/password"
-            android:textColorHint="@color/colorGray"
-            android:layout_marginTop="20dp"/>
+                <TextView
+                    android:background="@drawable/gradient"
+                    android:layout_width="match_parent"
+                    android:layout_height="201dp" />
+            </FrameLayout>
+            <TextView
+                android:id="@+id/loginTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorBlack"
+                android:textSize="30sp"
+                android:text="@string/login"
+                android:layout_marginTop="10dp"
+                android:layout_gravity="center"/>
 
-        <TextView
-            android:layout_marginTop="10dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/questionPassword"
-            android:textColor="@color/colorGray"/>
+            <LinearLayout
+                android:id="@+id/loginInputs"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="25dp"
+                android:layout_marginRight="25dp">
 
-    </LinearLayout>
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/email"
+                    android:textColorHint="@color/colorGray" />
 
-    <LinearLayout
-        android:id="@+id/bottomPartLogin"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        android:layout_marginBottom="60dp">
+                <EditText
+                    android:inputType="textPassword"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/password"
+                    android:textColorHint="@color/colorGray"
+                    android:layout_marginTop="20dp"/>
 
-        <Button
-            android:background="@drawable/border_botton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/continueText"
-            android:textColor="@color/colorWhite"
-            android:textSize="20sp"
-            android:paddingLeft="50dp"
-            android:paddingRight="50dp"/>
+                <TextView
+                    android:layout_marginTop="10dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/questionPassword"
+                    android:textColor="@color/colorGray"/>
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/questionLogin"
-            android:layout_marginTop="10dp"
-            android:textAlignment="center"
-            android:textColor="@color/colorGray"/>
+            </LinearLayout>
 
-    </LinearLayout>
+            <LinearLayout
+                android:id="@+id/bottomPartLogin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginTop="60dp"
+                android:layout_gravity="center">
 
+                <Button
+                    android:background="@drawable/border_botton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/continueText"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="20sp"
+                    android:paddingLeft="50dp"
+                    android:paddingRight="50dp"/>
+
+                <TextView
+                    android:id="@+id/toRegister"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/questionLogin"
+                    android:layout_marginTop="10dp"
+                    android:textAlignment="center"
+                    android:textColor="@color/colorGray"/>
+
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
