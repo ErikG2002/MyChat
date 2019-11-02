@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">MyChat</string>
     <string name="register">Registro</string>
+    <string name="check_in">Registrarse</string>
     <string name="login">Iniciar Sesión</string>
     <string name="questionRegister">¿Ya tienes cuenta?</string>
     <string name="questionLogin">¿No tienes cuenta?</string>
