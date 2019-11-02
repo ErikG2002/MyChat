@@ -50,21 +50,26 @@
                 android:layout_marginRight="25dp">
 
                 <EditText
+                    android:id="@+id/inputEmail"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="@string/email"
-                    android:textColorHint="@color/colorGray" />
+                    android:textColorHint="@color/colorGray"
+                    android:textColor="@color/colorBlack"/>
                 <FrameLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="20dp">
                     <EditText
+                        android:id="@+id/inputPassword"
                         android:inputType="textPassword"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:hint="@string/password"
-                        android:textColorHint="@color/colorGray" />
+                        android:textColorHint="@color/colorGray"
+                        android:textColor="@color/colorBlack" />
                     <ImageView
+                        android:id="@+id/seePasswordLogin"
                         android:layout_width="25dp"
                         android:layout_height="25dp"
                         android:src="@drawable/eye"
