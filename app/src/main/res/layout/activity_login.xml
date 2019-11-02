@@ -26,7 +26,7 @@
                     android:scaleType="centerCrop"/>
 
                 <TextView
-                    android:background="@drawable/gradient"
+                    android:background="@drawable/gradient_white"
                     android:layout_width="match_parent"
                     android:layout_height="201dp" />
             </FrameLayout>
